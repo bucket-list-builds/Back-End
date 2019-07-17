@@ -52,8 +52,6 @@ router.post(
   }
 );
 
-// probably need to write an update endpoint so we can update journal entries
-
 // Custom Middleware
 
 async function validateUserId(req, res, next) {
