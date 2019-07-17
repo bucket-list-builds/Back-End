@@ -26,7 +26,10 @@ router.post("/register", (req, res) => {
 
   Users.add(user)
     .then(saved => {
-      res.status(201).json(saved);
+      res.status(201).json({
+        message:`Welcome ${saved.username}`,
+        authToken: token
+      });
     })
     .catch(error => {
       res.status(500).json(error);
@@ -44,7 +47,10 @@ router.post("/login", (req, res) => {
         const token = generateToken(user);
         console.log(token);
 
-        res.status(201).json({ token: `${token}` });
+        res.status(201).json({
+          message:`Welcome ${user.username}`,
+          authToken: token,
+         });
       } else {
         res.status(401).json({ message: "Invalid Credentials" });
       }
