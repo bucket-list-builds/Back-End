@@ -5,7 +5,8 @@ module.exports = {
     getById,
     insert,
     update,
-    remove
+    remove,
+    addPost
 };
 
 
@@ -43,3 +44,9 @@ function remove(id) {
       .where('id', id)
       .del();
 }
+
+function addPost(post) {
+    return db('bucketlist').insert(post);
+}
+
+

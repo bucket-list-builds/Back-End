@@ -6,19 +6,19 @@ exports.seed = function(knex, Promise) {
       title: 'Hawaii',
       description: 'I cannont WAIT to go to Hawaii!!',
       journal_entry: 'Wowowowowowow Hawaiii wowowowowow hawaii wowowowow hawaiiiiiiiii!!!',
-      completed: 0
+      completed: false
     },
     {
       user_id: 2,
       title: 'Sleep',
       description: 'I have a dream to sleep for an entire day!',
-      completed: 0
+      completed: false
     },
     {
       user_id: 2,
       title: 'Japan was AMAZING',
       description: 'Exactly what I said in my title. :D',
-      completed: 1
+      completed: true
     },  
   ])
 };

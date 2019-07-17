@@ -29,15 +29,20 @@ router.get("/:id", validatePostId, (req, res) => {
 // Post a new Bucket List
 // (needs fat update)
 
-router.post("/", async (req, res) => {
-  Bucketlists.insert(req.body)
-    .then(post => {
-      res.status(201).json(post);
-    })
-    .catch(err => {
-      res.status(500).json({ message: "Error Adding Item" });
-    });
-});
+// router.post("/", async (req, res) => {
+//   Bucketlists.insert(req.body)
+//     .then(post => {
+//       res.status(201).json(post);
+//     })
+//     .catch(err => {
+//       res.status(500).json({ message: "Error Adding Item" });
+//     });
+// });
+
+router.post('/', async (req, res) => {
+  
+})
+
 
 // /home/:id
 // Delete specific post
@@ -90,5 +95,7 @@ async function validatePostId(req, res, next) {
     res.status(500).json({ message: "Failed to process" });
   }
 }
+
+
 
 module.exports = router;
