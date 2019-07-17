@@ -38,6 +38,7 @@ router.post("/register", (req, res) => {
     });
 });
 
+// Fixed
 router.post('/login', (req, res) => {
   let { username, password } = req.body;
 
