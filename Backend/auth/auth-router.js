@@ -30,7 +30,8 @@ router.post("/register", (req, res) => {
 
       res.status(201).json({
         message:`Welcome ${saved.username}`,
-        authToken: token
+        authToken: token,
+        user_id: user.id
       });
     })
     .catch(error => {
