@@ -40,7 +40,13 @@ router.get("/:id", validatePostId, (req, res) => {
 // });
 
 router.post('/', async (req, res) => {
-  
+  const post = req.body;
+  try {
+    const newPost = await Bucketlists.addPost(post);
+    res.status(201).json(newPost);
+  } catch(err) {
+    res.status(500).json(err);
+  }
 })
 
 
