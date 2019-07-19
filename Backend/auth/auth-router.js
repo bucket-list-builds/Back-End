@@ -8,8 +8,7 @@ function generateToken(user) {
   console.log("hi");
   return jwt.sign(
     {
-      userId: user.id,
-      username:user.username
+      userId: user.id
     },
     secrets.jwt,
     {
