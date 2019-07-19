@@ -5,13 +5,11 @@ const secrets = require("../config/secrets.js");
 const Users = require("../users/users-model.js");
 
 function generateToken(user) {
-  const payload = {
-    subject: user.id,
-    username: user.username
-  }
+  console.log("hi");
   return jwt.sign(
     {
-      userId: user.id
+      userId: user.id,
+      username:user.username
     },
     secrets.jwt,
     {
