@@ -42,8 +42,12 @@ router.get("/:id", validatePostId, (req, res) => {
 router.post('/', async (req, res) => {
   const post = req.body;
   try {
+    if(post.title){
     const newPost = await Bucketlists.addPost(post);
     res.status(201).json(newPost);
+    } else {
+      res.status(400).json({err: 'provide title'})
+    }
   } catch(err) {
     res.status(500).json(err);
   }
